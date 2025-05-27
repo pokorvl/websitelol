@@ -1,0 +1,196 @@
+<!--Made by JustLeader, see https://git.jldr.eu/justleader/httperrorpage-->
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Error xxx | JustLeader</title>
+    <!--<link rel="stylesheet" href="css/glitchy.css">         gradient.css/clickClack.css/glitchy.css/binary.css -->
+    	<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Justleader's Website">
+		<meta property="og:title" content="Errorpage">
+		<meta property="og:description" content="An invalid URL was specified, or the server experienced an error.">
+		<meta property="og:image" content="favicon.png">
+		<meta content="#FF6600" data-react-helmet="true" name="theme-color">
+		<!--<meta name="twitter:card" content="summary_large_image">-->
+		<meta name="twitter:site" content="@discord">
+		<meta name="description"  content="A simple website with a bunch of links to my services and other stuff">
+	
+	
+	
+	
+	
+    <script type="text/javascript">
+        window.onload = fadeIn;
+  
+        function fadeIn() {
+            var fade = document.getElementById("body");
+            var opacity = 0;
+            var intervalID = setInterval(function() {
+  
+                if (opacity < 1) {
+                    opacity = opacity + 0.1
+                    fade.style.opacity = opacity;
+                } else {
+                    clearInterval(intervalID);
+                }
+            }, 100);
+        }
+    </script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+body{ 
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #000000;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center; 
+  color: #fff;
+  font-size: 96px;
+  font-family: 'Fira Mono', monospace;
+  letter-spacing: -7px;
+}
+
+div{
+  animation: glitch 1s linear infinite;
+}
+#topp {
+  z-index: 2;
+  padding: 10px;
+}
+#backk {
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+  transition: opacity 3s;
+}
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+div:before,
+div:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+div:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+div:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+ /* unvisited link */
+ a:link:link {
+  color: #dacce5;
+  -webkit-transition: color .25s linear;
+  transition: color .25s linear;
+  text-decoration: none;
+}
+/* visited link */
+a:link:visited {
+  color: #dacce5;
+  -webkit-transition: color .25s linear;
+  transition: color .25s linear;
+  text-decoration: none;
+}
+/* mouse over link */
+a:link:hover {
+  color: #ff6600;
+  -webkit-transition: color .1s ease-in;
+  transition: color .0.5s ease-in;
+}
+/* selected link */
+a:active {
+  color: white;
+  -webkit-transition: color .25s linear;
+  transition: color .25s linear;
+  text-decoration: none;
+} 
+    </style>
+<script>
+const myRequest = new Request(document.URL);fetch(myRequest).then((response) => {
+  let header = document.querySelector("a");
+  var responsestatus = response.status;
+  header.innerText = responsestatus;
+  let css = 'body { background-image: url("https://http.cat/';
+  css += responsestatus;
+css += '"); }';
+var head = document.head || document.getElementsByTagName('head')[0];
+var style = document.createElement('style');
+style.type = 'text/css';
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+head.appendChild(style);
+        function myFunction() {
+            return "Error " + response.status;
+        }
+        document.getElementById('errordivtitle').setAttribute('title', myFunction());
+        document.title = "Error " + response.status + " | JustLeader";
+});
+</script>
+</head>
+<body id="body" style="opacity:0;">
+<div id="topp">
+<div id="errordivtitle" title="Error XXX">Error <a>XXX</a>. Go... <a id="link" href="javascript:window.history.go(-1)">back</a>?</div>
+</div>
+<div id="backk">
+<script>
+window.addEventListener("load", () => {
+  document.getElementById("backk").style.opacity = 1;
+});
+</script>
+</div>
+</body>
+</html>
