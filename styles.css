@@ -12,17 +12,48 @@ body {
 
 }
 
-h1 {
 
-    color: #ff6600;
-    margin: 0;
 
-}
-
-.hero {
+.hero { /* hero class*/
 
     background-color: #3C3E3C;
     padding: 24px 32px;
+    width: 100%;
+    
 
 
 }
+
+.hero p{ /* hero class, only p */
+
+    color: #ffffff;
+    margin: 36px auto;
+    text-align: center;
+
+}
+
+.hero h1 { /* hero class, only h1 */
+
+    color: #ff6600;
+    margin: 0;
+    text-align: center;
+
+}
+
+.hero a, .hero button { /* hero class, buttons and links */
+
+    color: #f5cb5c;
+    background-color: #4b4c4b;
+    border: 2px solid #F5CB5C;
+    text-decoration: none;
+    padding: 12px 8px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: auto;
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  gap: 20px; /* space between link and button */
+  margin-top: 48px; /* vertical spacing */
+
+}
+
