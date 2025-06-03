@@ -19,10 +19,12 @@ body {
     background-color: #3C3E3C;
     padding: 24px 32px;
     width: 100%;
-    
+
 
 
 }
+
+
 
 .hero p{ /* hero class, only p */
 
@@ -49,11 +51,7 @@ body {
     padding: 12px 8px;
     font-weight: bold;
     border-radius: 10px;
-    margin: auto;
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  gap: 20px; /* space between link and button */
-  margin-top: 48px; /* vertical spacing */
+
 
 }
 
