@@ -15,17 +15,26 @@ body {
 
 main div {
 
-    margin: 0;
+    margin: 10px;
     background-color: #242424;
     color: rgb(255, 255, 255);
     border-radius: 16px;
+    padding: 0px;
 
 }
 
 main div h2 {
 
-    padding: 20px;
+    padding: 0px;
+    padding-top: 24px;
+    padding-left: 64px;
     
+
+}
+
+main div p {
+
+    padding: 16px;
 
 }
 
